@@ -41,3 +41,9 @@ exports.login = (req, res, next) => {
     })
     .catch(error => res.status(500).json({ error }))
 }
+
+// exports.account = (req, res, next) => {
+//   User.findOne()
+//     .then()
+//     .catch(error => res.status(500).json({ error }))
+// }
