@@ -1,0 +1,22 @@
+{
+  "name": "apiauth",
+  "version": "0.1.0",
+  "description": "Mon API d'authentification",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "test": "standard --fix"
+  },
+  "author": "Sebastien Colbert <colbertsebastien@gmail.com> (https://sebastiencolbert.fr)",
+  "license": "CECILL-2.1",
+  "devDependencies": {
+    "nodemon": "^2.0.14",
+    "standard": "^16.0.4"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12"
+  }
+}
