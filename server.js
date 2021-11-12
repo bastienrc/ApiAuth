@@ -1,7 +1,13 @@
+// Les Variables d'environnements
 require('dotenv').config()
+
+// Import du package HTTP natif de Node pour créer un serveur
 const http = require('http')
+
+// Mon Application
 const app = require('./app')
 
+// Renvoie un port valide, qu'il soit fourni sous la forme d'un numéro ou d'une chaîne
 const normalizePort = val => {
   const port = parseInt(val, 10)
 
@@ -17,6 +23,7 @@ const normalizePort = val => {
 const port = normalizePort(process.env.PORT || '3000')
 app.set('port', port)
 
+// Recherche les différentes erreurs et les gère de manière appropriée.
 const errorHandler = error => {
   if (error.syscall !== 'listen') {
     throw error
