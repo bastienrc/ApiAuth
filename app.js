@@ -25,6 +25,6 @@ app.use(express.json())
 
 app.use('/images', express.static(path.join(__dirname, 'images')))
 
-app.use('/api/user', userRoutes)
+app.use('/api/users', userRoutes)
 
 module.exports = app

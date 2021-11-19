@@ -5,12 +5,22 @@ const userController = require('../controllers/user')
 const auth = require('../middleware/auth')
 const multer = require('../middleware/multer-config')
 
+// Enregistrement et connexion
 router.post('/signup', userController.signup)
 router.post('/login', userController.login)
 
-router.put('/account/:id', auth, multer, userController.updateUser)
-router.delete('/account/:id', auth, userController.deleteUser)
-router.get('/account/:id', auth, userController.readOneUser)
-router.get('/accounts/', auth, userController.readAllUsers)
+/*
+/* Utilisateur
+*/
+
+router.get('/:id', auth, userController.readOneUser)
+router.put('/:id', auth, multer, userController.updateUser)
+router.delete('/:id', auth, userController.deleteUser)
+
+/*
+/* Administrateur
+*/
+
+router.get('/', auth, userController.readAllUsers)
 
 module.exports = router
