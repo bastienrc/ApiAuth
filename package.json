@@ -12,7 +12,8 @@
   "license": "CECILL-2.1",
   "devDependencies": {
     "nodemon": "^2.0.14",
-    "standard": "^16.0.4"
+    "standard": "^16.0.4",
+    "morgan": "^1.10.0"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",

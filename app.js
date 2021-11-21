@@ -1,10 +1,12 @@
 const express = require('express')
+const morgan = require('morgan')
 const mongoose = require('mongoose')
 const path = require('path')
 
 const userRoutes = require('./routes/user')
 
 const app = express()
+app.use(morgan('dev'))
 
 mongoose.connect(`${process.env.DATABASE_URL}?retryWrites=true&w=majority`,
   {
