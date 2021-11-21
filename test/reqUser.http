@@ -3,13 +3,16 @@
 @token = {{login.response.body.token}}
 @id = {{login.response.body.userId}}
 
+@email = test@gmail.fr
+@password = Test62200
+
 ### SignUp
 POST {{baseUrl}}/api/users/signup HTTP/1.1
 Content-Type: application/json
 
 {
-  "email": "test@test.fr",
-  "password": "test"
+  "email": "{{email}}",
+  "password": "{{password}}"
 }
 
 ### Login
@@ -18,8 +21,8 @@ POST {{baseUrl}}/api/users/login HTTP/1.1
 Content-Type: application/json
 
 {
-  "email": "test@test.fr",
-  "password": "test"
+  "email": "{{email}}",
+  "password": "{{password}}"
 }
 
 ### Update
