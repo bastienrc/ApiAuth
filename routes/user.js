@@ -1,12 +1,14 @@
 const express = require('express')
 const router = express.Router()
 
-const userController = require('../controllers/user')
 const auth = require('../middleware/auth')
+const password = require('../middleware/password')
 const multer = require('../middleware/multer-config')
 
+const userController = require('../controllers/user')
+
 // Enregistrement et connexion
-router.post('/signup', userController.signup)
+router.post('/signup', password, userController.signup)
 router.post('/login', userController.login)
 
 /*
