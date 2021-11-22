@@ -72,12 +72,18 @@ exports.updateUser = (req, res, next) => {
 exports.deleteUser = (req, res, next) => {
   User.findOne({ _id: req.params.id })
     .then(user => {
-      const filename = user.avatarUrl.split('/images/')[1]
-      fs.unlink(`images/${filename}`, () => {
+      if (user.avatarUrl) {
+        const filename = user.avatarUrl.split('/images/')[1]
+        fs.unlink(`images/${filename}`, () => {
+          User.deleteOne({ _id: req.params.id })
+            .then(() => res.status(200).json({ message: 'Utilisateur supprimé !' }))
+            .catch(error => res.status(400).json({ error }))
+        })
+      } else {
         User.deleteOne({ _id: req.params.id })
           .then(() => res.status(200).json({ message: 'Utilisateur supprimé !' }))
           .catch(error => res.status(400).json({ error }))
-      })
+      }
     })
     .catch(error => res.status(500).json({ error }))
 }
