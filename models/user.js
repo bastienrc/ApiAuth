@@ -42,7 +42,7 @@ const userSchema = new Schema({
   }
 },
 {
-  runValidators: true
+  timestamps: true
 })
 
 mongoose.plugin(schema => {
