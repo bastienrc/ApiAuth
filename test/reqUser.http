@@ -31,6 +31,7 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
+  "firstname": "Anakin",
   "group": "Dark Vador",
   "avatarUrl": "https://cdn.pixabay.com/photo/2019/01/13/10/58/character-3930118_960_720.jpg"
 }
