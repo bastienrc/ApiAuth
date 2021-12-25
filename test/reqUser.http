@@ -1,9 +1,10 @@
 ### Variables
+#@baseUrl = https://bastienrc-apiauth.herokuapp.com
 @baseUrl = http://localhost:5000
 @token = {{login.response.body.token}}
 @id = {{login.response.body.userId}}
 
-@email = test@gmail.fr
+@email = nel23@gmail.fr
 @password = Test62200
 
 ### SignUp
